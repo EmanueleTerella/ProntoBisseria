@@ -1,4 +1,4 @@
 # Project-TPS
--sviluppatore a: assegnato al menu' pizze
--sviluppatore b: assegnato al menu' dolci
--sviluppatore c: assegnato al menu' bevande
+-sviluppatore MITIN: assegnato al menu' pizze
+-sviluppatore DAVID: assegnato al menu' dolci
+-sviluppatore LORENZO: assegnato al menu' bevande
