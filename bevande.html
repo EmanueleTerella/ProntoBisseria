@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProntoBisseria | Bevande</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8ef;
+            color: #29231f;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 4px solid #e87524;
+        }
+
+        header h1 {
+            color: #ffbd59;
+            font-size: 30px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #ffbd59;
+            color: #222;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #29231f, #7b3718);
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #ffbd59;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e87524;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b84b1b;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 55px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: #b84b1b;
+            margin-bottom: 15px;
+        }
+
+        .descrizione {
+            color: #70645a;
+            margin-bottom: 30px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(210px, 1fr)
+            );
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+        }
+
+        .card h3 {
+            color: #b84b1b;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #70645a;
+        }
+
+        .prezzo {
+            display: block;
+            color: #e87524;
+            font-size: 21px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .alt {
+            background: #f5e8d8;
+        }
+
+        footer {
+            background: #171717;
+            color: #ddd;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #ffbd59;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍕 ProntoBisseria</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="pizze.html">Pizze</a>
+        <a href="dolci.html">Dolci</a>
+        <a href="bevande.html">Bevande</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>🥤 Menu Bevande</h2>
+
+    <p>
+        La freschezza perfetta per accompagnare
+        ogni pizza e ogni momento.
+    </p>
+
+    <a href="index.html" class="btn">Torna alla Home</a>
+</div>
+
+<section>
+    <h2>💧 Acqua</h2>
+
+    <p class="descrizione">
+        Semplicità e freschezza a tavola.
+    </p>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <h3>Acqua Naturale</h3>
+            <p>Bottiglia da 500 ml</p>
+            <span class="prezzo">€ 1,00</span>
+        </div>
+
+        <div class="card">
+            <h3>Acqua Frizzante</h3>
+            <p>Bottiglia da 500 ml</p>
+            <span class="prezzo">€ 1,00</span>
+        </div>
+
+        <div class="card">
+            <h3>Acqua Naturale Grande</h3>
+            <p>Bottiglia da 1 litro</p>
+            <span class="prezzo">€ 2,00</span>
+        </div>
+
+        <div class="card">
+            <h3>Acqua Frizzante Grande</h3>
+            <p>Bottiglia da 1 litro</p>
+            <span class="prezzo">€ 2,00</span>
+        </div>
+
+    </div>
+</section>
+
+<section class="alt">
+    <h2>🥤 Bibite</h2>
+
+    <p class="descrizione">
+        Le bibite classiche per accompagnare la tua pizza.
+    </p>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <h3>Coca-Cola</h3>
+            <p>Lattina da 330 ml</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Coca-Cola Zero</h3>
+            <p>Lattina da 330 ml</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Fanta</h3>
+            <p>Lattina da 330 ml</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Sprite</h3>
+            <p>Lattina da 330 ml</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Tè al Limone</h3>
+            <p>Lattina da 330 ml</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Tè alla Pesca</h3>
+            <p>Lattina da 330 ml</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Aranciata</h3>
+            <p>Bevanda al gusto di arancia</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Limonata</h3>
+            <p>Bevanda fresca al limone</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>🍺 Birre</h2>
+
+    <p class="descrizione">
+        Una selezione di birre da gustare con la pizza.
+    </p>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <h3>Birra Chiara</h3>
+            <p>Bottiglia da 330 ml</p>
+            <span class="prezzo">€ 3,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Birra Doppio Malto</h3>
+            <p>Bottiglia da 330 ml</p>
+            <span class="prezzo">€ 4,00</span>
+        </div>
+
+        <div class="card">
+            <h3>Birra Grande</h3>
+            <p>Bottiglia da 660 ml</p>
+            <span class="prezzo">€ 5,00</span>
+        </div>
+
+        <div class="card">
+            <h3>Birra Analcolica</h3>
+            <p>Bottiglia da 330 ml</p>
+            <span class="prezzo">€ 3,00</span>
+        </div>
+
+    </div>
+</section>
+
+<section class="alt">
+    <h2>🍹 Analcolici e Caffetteria</h2>
+
+    <p class="descrizione">
+        Una pausa rinfrescante o un caffè a fine pasto.
+    </p>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <h3>Cocktail Analcolico</h3>
+            <p>Mix fresco alla frutta</p>
+            <span class="prezzo">€ 4,00</span>
+        </div>
+
+        <div class="card">
+            <h3>Succo di Frutta</h3>
+            <p>Gusti assortiti</p>
+            <span class="prezzo">€ 2,50</span>
+        </div>
+
+        <div class="card">
+            <h3>Caffè Espresso</h3>
+            <p>Il classico italiano</p>
+            <span class="prezzo">€ 1,20</span>
+        </div>
+
+        <div class="card">
+            <h3>Caffè Decaffeinato</h3>
+            <p>Tutto il gusto, senza caffeina</p>
+            <span class="prezzo">€ 1,30</span>
+        </div>
+
+        <div class="card">
+            <h3>Cappuccino</h3>
+            <p>Caffè e latte montato</p>
+            <span class="prezzo">€ 1,80</span>
+        </div>
+
+        <div class="card">
+            <h3>Tè Caldo</h3>
+            <p>Disponibile in vari gusti</p>
+            <span class="prezzo">€ 2,00</span>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 <strong>ProntoBisseria</strong> - Tutti i diritti riservati.</p>
+
+    <p>
+        Progetto realizzato da Lorenzo Vitaterna,
+        Emanuele Terella, David Di Trocchio e Mitin Maksim.
+    </p>
+</footer>
+
+</body>
+</html>
