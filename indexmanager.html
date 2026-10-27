@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProntoBisseria | Pizzeria</title>
+
+    <title>ProntoBisseria - La vera pizza italiana</title>
 
     <style>
         * {
@@ -16,184 +17,230 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff8ef;
-            color: #29231f;
+            background-color: #fff8ed;
+            color: #252525;
         }
 
         /* HEADER */
         header {
-            background-color: #222222;
-            color: white;
-            padding: 20px 8%;
+            width: 100%;
+            background-color: #252525;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header h1 {
-            color: #ffad42;
-            font-size: 30px;
+        /* LOGO */
+        .logo {
+            color: #f5bd45;
+            font-size: 27px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        /* NAVIGAZIONE */
+        nav {
+            display: flex;
+            gap: 25px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #ffad42;
+            color: #f5bd45;
         }
 
-        /* HOME */
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* PAGINA PRINCIPALE */
         .hero {
-            min-height: 420px;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.65),
-                rgba(0, 0, 0, 0.65)
-            ),
-            url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=80");
+            min-height: 550px;
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=80");
 
             background-size: cover;
             background-position: center;
-            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 120px 20px;
+            padding: 40px 20px;
         }
 
-        .hero h2 {
-            font-size: 48px;
-            color: #ffad42;
+        .hero-content {
+            color: white;
+            max-width: 750px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 19px;
+        .hero-content p {
+            font-size: 20px;
             margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
-            background-color: #e87524;
+            background-color: #c9362b;
             color: white;
-            padding: 14px 28px;
+            border: none;
+            padding: 15px 30px;
+            font-size: 17px;
+            border-radius: 6px;
+            cursor: pointer;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background-color: #c85b15;
+            background-color: #a5261e;
+            transform: scale(1.05);
         }
 
-        /* SEZIONI MENU */
-        section {
-            padding: 65px 8%;
+        /* SEZIONI */
+        .sezione {
+            padding: 65px 7%;
             text-align: center;
+            scroll-margin-top: 75px;
         }
 
-        section h2 {
+        .sezione h2 {
             font-size: 34px;
-            margin-bottom: 15px;
-            color: #b84b1b;
+            margin-bottom: 20px;
+            color: #c9362b;
         }
 
-        .descrizione {
-            margin-bottom: 35px;
-            color: #665c53;
+        .sezione p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 750px;
+            margin: 0 auto 25px;
         }
 
-        .menu-container {
+        .sfondo-bianco {
+            background-color: white;
+        }
+
+        /* CARDS */
+        .prodotti {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(220px, 1fr)
-            );
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 25px;
-            margin-top: 30px;
+            max-width: 1100px;
+            margin: 30px auto 0;
         }
 
         .card {
             background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
+            border-radius: 10px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
         }
 
         .card h3 {
-            color: #b84b1b;
+            color: #252525;
             margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 10px;
         }
 
         .prezzo {
-            display: block;
-            color: #e87524;
-            font-size: 20px;
+            color: #c9362b;
             font-weight: bold;
-            margin-top: 15px;
-        }
-
-        /* COLORI ALTERNATI */
-        #dolci {
-            background-color: #f5e8d8;
-        }
-
-        #bevande {
-            background-color: #fff8ef;
-        }
-
-        /* CONTATTI */
-        #contatti {
-            background-color: #29231f;
-            color: white;
-        }
-
-        #contatti h2 {
-            color: #ffad42;
-        }
-
-        #contatti p {
-            margin: 12px 0;
+            font-size: 20px;
         }
 
         /* FOOTER */
         footer {
-            background-color: #171717;
-            color: #cccccc;
+            background-color: #252525;
+            color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 14px;
+            padding: 25px 15px;
+            line-height: 1.8;
         }
 
-        /* TELEFONI E TABLET */
-        @media (max-width: 650px) {
+        /* MOBILE */
+        @media (max-width: 768px) {
             header {
-                justify-content: center;
-                text-align: center;
+                padding: 18px 5%;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 8px;
+            .logo {
+                font-size: 22px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #252525;
+                padding: 20px;
+                text-align: center;
+                gap: 20px;
+            }
+
+            nav.active {
+                display: flex;
             }
 
             .hero {
-                padding: 90px 20px;
+                min-height: 480px;
             }
 
-            .hero h2 {
-                font-size: 34px;
+            .hero-content h1 {
+                font-size: 38px;
             }
 
-            section {
-                padding: 45px 6%;
+            .hero-content p {
+                font-size: 17px;
+            }
+
+            .sezione {
+                padding: 45px 5%;
+            }
+
+            .sezione h2 {
+                font-size: 28px;
+            }
+
+            .prodotti {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -201,172 +248,170 @@
 
 <body>
 
-    <!-- INTESTAZIONE -->
+    <!-- HEADER -->
     <header>
-        <h1>🍕 ProntoBisseria</h1>
+        <a href="#home" class="logo">
+            Pronto<span>Bisseria</span> 🍕
+        </a>
 
-        <nav>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Apri o chiudi il menu"
+            aria-expanded="false"
+            aria-controls="navbar">
+            ☰
+        </button>
+
+        <nav id="navbar">
             <a href="#home">Home</a>
-            <a href="#pizze">Pizze</a>
+            <a href="#pizze">Le nostre pizze</a>
             <a href="#dolci">Dolci</a>
             <a href="#bevande">Bevande</a>
-            <a href="#contatti">Contatti</a>
         </nav>
     </header>
 
-    <!-- PAGINA PRINCIPALE -->
-    <div class="hero" id="home">
-        <h2>La pizza che ami!</h2>
+    <!-- HOME -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Benvenuti da ProntoBisseria!</h1>
 
-        <p>
-            Ingredienti freschi, tanto gusto
-            e la passione della vera pizza.
-        </p>
+                <p>
+                    La passione per la pizza, il gusto della tradizione
+                    e la qualità degli ingredienti.
+                    Vieni a scoprire il nostro mondo!
+                </p>
 
-        <a href="#pizze" class="btn">
-            Scopri i nostri menu
-        </a>
-    </div>
-
-    <!-- MENU PIZZE -->
-    <section id="pizze">
-        <h2>🍕 Menu Pizze</h2>
-
-        <p class="descrizione">
-            <!-- INSERISCI QUI LA DESCRIZIONE DEL MENU PIZZE -->
-            Scopri le nostre pizze e scegli la tua preferita.
-        </p>
-
-        <div class="menu-container">
-
-            <!-- SOSTITUISCI QUESTE CARD CON LE TUE PIZZE -->
-
-            <div class="card">
-                <h3>[Nome pizza]</h3>
-                <p>[Ingredienti della pizza]</p>
-                <span class="prezzo">€ [Prezzo]</span>
+                <a href="#pizze" class="btn">
+                    Scopri il nostro menu
+                </a>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>[Nome pizza]</h3>
-                <p>[Ingredienti della pizza]</p>
-                <span class="prezzo">€ [Prezzo]</span>
+        <!-- PIZZE -->
+        <section class="sezione" id="pizze">
+            <h2>Le nostre pizze 🍕</h2>
+
+            <p>
+                Prepariamo le nostre pizze con ingredienti selezionati,
+                impasti curati e tanta passione per la tradizione italiana.
+            </p>
+
+            <div class="prodotti">
+                <article class="card">
+                    <h3>Margherita</h3>
+                    <p>Pomodoro, mozzarella e basilico fresco.</p>
+                    <div class="prezzo">€ 6,50</div>
+                </article>
+
+                <article class="card">
+                    <h3>Diavola</h3>
+                    <p>Pomodoro, mozzarella e salame piccante.</p>
+                    <div class="prezzo">€ 8,00</div>
+                </article>
+
+                <article class="card">
+                    <h3>Quattro Formaggi</h3>
+                    <p>Una deliziosa combinazione di formaggi.</p>
+                    <div class="prezzo">€ 8,50</div>
+                </article>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>[Nome pizza]</h3>
-                <p>[Ingredienti della pizza]</p>
-                <span class="prezzo">€ [Prezzo]</span>
+        <!-- DOLCI -->
+        <section class="sezione sfondo-bianco" id="dolci">
+            <h2>I nostri dolci 🍰</h2>
+
+            <p>
+                Concludi il tuo pasto con una dolce tentazione,
+                preparata per regalarti un momento speciale.
+            </p>
+
+            <div class="prodotti">
+                <article class="card">
+                    <h3>Tiramisù</h3>
+                    <p>Crema al mascarpone, caffè e cacao.</p>
+                    <div class="prezzo">€ 5,00</div>
+                </article>
+
+                <article class="card">
+                    <h3>Panna Cotta</h3>
+                    <p>Delicata panna cotta con topping a scelta.</p>
+                    <div class="prezzo">€ 4,50</div>
+                </article>
+
+                <article class="card">
+                    <h3>Cheesecake</h3>
+                    <p>Cheesecake cremosa con frutti di bosco.</p>
+                    <div class="prezzo">€ 5,00</div>
+                </article>
             </div>
+        </section>
 
-            <!-- AGGIUNGI ALTRE PIZZE COPIANDO UNA CARD -->
+        <!-- BEVANDE -->
+        <section class="sezione" id="bevande">
+            <h2>Le nostre bevande 🥤</h2>
 
-        </div>
-    </section>
+            <p>
+                Scopri le bevande perfette per accompagnare
+                la tua pizza preferita.
+            </p>
 
-    <!-- MENU DOLCI -->
-    <section id="dolci">
-        <h2>🍰 Menu Dolci</h2>
+            <div class="prodotti">
+                <article class="card">
+                    <h3>Acqua</h3>
+                    <p>Acqua naturale o frizzante.</p>
+                    <div class="prezzo">€ 1,50</div>
+                </article>
 
-        <p class="descrizione">
-            <!-- INSERISCI QUI LA DESCRIZIONE DEL MENU DOLCI -->
-            Un tocco di dolcezza per concludere il pasto.
-        </p>
+                <article class="card">
+                    <h3>Cola</h3>
+                    <p>Una bevanda fresca e frizzante.</p>
+                    <div class="prezzo">€ 2,50</div>
+                </article>
 
-        <div class="menu-container">
-
-            <!-- SOSTITUISCI QUESTE CARD CON I TUOI DOLCI -->
-
-            <div class="card">
-                <h3>[Nome dolce]</h3>
-                <p>[Descrizione del dolce]</p>
-                <span class="prezzo">€ [Prezzo]</span>
+                <article class="card">
+                    <h3>Aranciata</h3>
+                    <p>Una bibita dal gusto agrumato.</p>
+                    <div class="prezzo">€ 2,50</div>
+                </article>
             </div>
+        </section>
+    </main>
 
-            <div class="card">
-                <h3>[Nome dolce]</h3>
-                <p>[Descrizione del dolce]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome dolce]</h3>
-                <p>[Descrizione del dolce]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <!-- AGGIUNGI ALTRI DOLCI COPIANDO UNA CARD -->
-
-        </div>
-    </section>
-
-    <!-- MENU BEVANDE -->
-    <section id="bevande">
-        <h2>🥤 Menu Bevande</h2>
-
-        <p class="descrizione">
-            <!-- INSERISCI QUI LA DESCRIZIONE DEL MENU BEVANDE -->
-            Le bevande perfette per accompagnare la tua pizza.
-        </p>
-
-        <div class="menu-container">
-
-            <!-- SOSTITUISCI QUESTE CARD CON LE TUE BEVANDE -->
-
-            <div class="card">
-                <h3>[Nome bevanda]</h3>
-                <p>[Formato o descrizione]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome bevanda]</h3>
-                <p>[Formato o descrizione]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome bevanda]</h3>
-                <p>[Formato o descrizione]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <!-- AGGIUNGI ALTRE BEVANDE COPIANDO UNA CARD -->
-
-        </div>
-    </section>
-
-    <!-- CONTATTI -->
-    <section id="contatti">
-        <h2>📍 Contattaci</h2>
-
-        <p>
-            <strong>Indirizzo:</strong>
-            [Inserisci l'indirizzo della pizzeria]
-        </p>
-
-        <p>
-            <strong>Telefono:</strong>
-            [Inserisci il numero di telefono]
-        </p>
-
-        <p>
-            <strong>Orari:</strong>
-            [Inserisci gli orari di apertura]
-        </p>
-
-        <p>
-            <strong>Email:</strong>
-            [Inserisci l'indirizzo email]
-        </p>
-    </section>
-
-    <!-- PIEDE DI PAGINA -->
+    <!-- FOOTER -->
     <footer>
-        <p>
-            © 2026 ProntoBisseria - Tutti i diritti riservati.
-        </p>
+        <p><strong>ProntoBisseria 🍕</strong></p>
+        <p>La vera passione per la pizza italiana.</p>
+        <p>&copy; <span id="anno"></span> ProntoBisseria - Tutti i diritti riservati.</p>
     </footer>
+
+    <script>
+        // Menu per smartphone
+        const menuToggle = document.getElementById("menuToggle");
+        const navbar = document.getElementById("navbar");
+
+        menuToggle.addEventListener("click", function () {
+            const aperto = navbar.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", aperto);
+            menuToggle.textContent = aperto ? "✕" : "☰";
+        });
+
+        // Chiude il menu dopo aver scelto una sezione
+        navbar.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navbar.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Aggiorna automaticamente l'anno
+        document.getElementById("anno").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
