@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProntoBisseria | Pizzeria</title>
+    <title>ProntoBisseria | Home</title>
 
     <style>
         * {
@@ -16,43 +15,46 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #fff8ef;
+            background: #fff8ef;
             color: #29231f;
         }
 
-        /* HEADER */
         header {
-            background-color: #222222;
+            background: #222;
             color: white;
-            padding: 20px 8%;
+            padding: 22px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
+            border-bottom: 4px solid #e87524;
         }
 
         header h1 {
-            color: #ffad42;
+            color: #ffbd59;
             font-size: 30px;
         }
 
         nav a {
+            display: inline-block;
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin: 5px;
+            padding: 10px 14px;
+            border-radius: 8px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #ffad42;
+            background: #ffbd59;
+            color: #222;
         }
 
-        /* HOME */
         .hero {
-            min-height: 420px;
             background: linear-gradient(
-                rgba(0, 0, 0, 0.65),
+                rgba(0, 0, 0, 0.78),
                 rgba(0, 0, 0, 0.65)
             ),
             url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1600&q=80");
@@ -66,7 +68,7 @@
 
         .hero h2 {
             font-size: 48px;
-            color: #ffad42;
+            color: #ffbd59;
             margin-bottom: 20px;
         }
 
@@ -77,54 +79,56 @@
 
         .btn {
             display: inline-block;
-            background-color: #e87524;
+            background: #e87524;
             color: white;
-            padding: 14px 28px;
+            padding: 14px 25px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background-color: #c85b15;
+            background: #b84b1b;
+            transform: translateY(-3px);
         }
 
-        /* SEZIONI MENU */
         section {
-            padding: 65px 8%;
+            padding: 60px 8%;
             text-align: center;
         }
 
         section h2 {
+            color: #b84b1b;
             font-size: 34px;
             margin-bottom: 15px;
-            color: #b84b1b;
         }
 
         .descrizione {
+            color: #70645a;
             margin-bottom: 35px;
-            color: #665c53;
         }
 
         .menu-container {
             display: grid;
             grid-template-columns: repeat(
-                auto-fit, minmax(220px, 1fr)
+                auto-fit, minmax(230px, 1fr)
             );
             gap: 25px;
             margin-top: 30px;
         }
 
         .card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.09);
+            transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .card h3 {
@@ -132,64 +136,50 @@
             margin-bottom: 12px;
         }
 
-        .prezzo {
-            display: block;
+        .card p {
+            color: #70645a;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 20px;
             color: #e87524;
-            font-size: 20px;
             font-weight: bold;
-            margin-top: 15px;
+            text-decoration: none;
         }
 
-        /* COLORI ALTERNATI */
-        #dolci {
-            background-color: #f5e8d8;
+        .alt {
+            background: #f5e8d8;
         }
 
-        #bevande {
-            background-color: #fff8ef;
-        }
-
-        /* CONTATTI */
-        #contatti {
-            background-color: #29231f;
-            color: white;
-        }
-
-        #contatti h2 {
-            color: #ffad42;
-        }
-
-        #contatti p {
-            margin: 12px 0;
-        }
-
-        /* FOOTER */
         footer {
-            background-color: #171717;
-            color: #cccccc;
+            background: #171717;
+            color: #ddd;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             font-size: 14px;
         }
 
-        /* TELEFONI E TABLET */
+        footer strong {
+            color: #ffbd59;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
         @media (max-width: 650px) {
             header {
                 justify-content: center;
                 text-align: center;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 8px;
-            }
-
             .hero {
-                padding: 90px 20px;
+                padding: 85px 20px;
             }
 
             .hero h2 {
-                font-size: 34px;
+                font-size: 35px;
             }
 
             section {
@@ -201,172 +191,83 @@
 
 <body>
 
-    <!-- INTESTAZIONE -->
-    <header>
-        <h1>🍕 ProntoBisseria</h1>
+<header>
+    <h1>🍕 ProntoBisseria</h1>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#pizze">Pizze</a>
-            <a href="#dolci">Dolci</a>
-            <a href="#bevande">Bevande</a>
-            <a href="#contatti">Contatti</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="pizze.html">Pizze</a>
+        <a href="dolci.html">Dolci</a>
+        <a href="bevande.html">Bevande</a>
+    </nav>
+</header>
 
-    <!-- PAGINA PRINCIPALE -->
-    <div class="hero" id="home">
-        <h2>La pizza che ami!</h2>
+<div class="hero">
+    <h2>La pizza che ami!</h2>
 
-        <p>
-            Ingredienti freschi, tanto gusto
-            e la passione della vera pizza.
-        </p>
+    <p>
+        Ingredienti selezionati, sapori irresistibili
+        e tutta la passione della vera pizza.
+    </p>
 
-        <a href="#pizze" class="btn">
-            Scopri i nostri menu
-        </a>
+    <a href="pizze.html" class="btn">
+        Scopri il nostro menu
+    </a>
+</div>
+
+<section>
+    <h2>Benvenuti da ProntoBisseria</h2>
+
+    <p class="descrizione">
+        Il luogo perfetto per gustare una buona pizza,
+        concedersi un dolce e trascorrere momenti speciali.
+    </p>
+
+    <div class="menu-container">
+
+        <div class="card">
+            <h3>🍕 Menu Pizze</h3>
+            <p>Scopri le nostre pizze classiche e speciali.</p>
+            <a href="pizze.html">SCOPRI LE PIZZE →</a>
+        </div>
+
+        <div class="card">
+            <h3>🍰 Menu Dolci</h3>
+            <p>Concludi il pasto con una dolce tentazione.</p>
+            <a href="dolci.html">SCOPRI I DOLCI →</a>
+        </div>
+
+        <div class="card">
+            <h3>🥤 Menu Bevande</h3>
+            <p>Acqua, bibite, birre e tante altre proposte.</p>
+            <a href="bevande.html">SCOPRI LE BEVANDE →</a>
+        </div>
+
     </div>
+</section>
 
-    <!-- MENU PIZZE -->
-    <section id="pizze">
-        <h2>🍕 Menu Pizze</h2>
+<section class="alt">
+    <h2>La nostra passione</h2>
 
-        <p class="descrizione">
-            <!-- INSERISCI QUI LA DESCRIZIONE DEL MENU PIZZE -->
-            Scopri le nostre pizze e scegli la tua preferita.
-        </p>
+    <p class="descrizione">
+        Buon cibo, ingredienti scelti e convivialità:
+        da ProntoBisseria ogni momento è quello giusto
+        per condividere qualcosa di buono.
+    </p>
 
-        <div class="menu-container">
+    <a href="pizze.html" class="btn">
+        Scegli la tua pizza
+    </a>
+</section>
 
-            <!-- SOSTITUISCI QUESTE CARD CON LE TUE PIZZE -->
+<footer>
+    <p>© 2026 <strong>ProntoBisseria</strong> - Tutti i diritti riservati.</p>
 
-            <div class="card">
-                <h3>[Nome pizza]</h3>
-                <p>[Ingredienti della pizza]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome pizza]</h3>
-                <p>[Ingredienti della pizza]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome pizza]</h3>
-                <p>[Ingredienti della pizza]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <!-- AGGIUNGI ALTRE PIZZE COPIANDO UNA CARD -->
-
-        </div>
-    </section>
-
-    <!-- MENU DOLCI -->
-    <section id="dolci">
-        <h2>🍰 Menu Dolci</h2>
-
-        <p class="descrizione">
-            <!-- INSERISCI QUI LA DESCRIZIONE DEL MENU DOLCI -->
-            Un tocco di dolcezza per concludere il pasto.
-        </p>
-
-        <div class="menu-container">
-
-            <!-- SOSTITUISCI QUESTE CARD CON I TUOI DOLCI -->
-
-            <div class="card">
-                <h3>[Nome dolce]</h3>
-                <p>[Descrizione del dolce]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome dolce]</h3>
-                <p>[Descrizione del dolce]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome dolce]</h3>
-                <p>[Descrizione del dolce]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <!-- AGGIUNGI ALTRI DOLCI COPIANDO UNA CARD -->
-
-        </div>
-    </section>
-
-    <!-- MENU BEVANDE -->
-    <section id="bevande">
-        <h2>🥤 Menu Bevande</h2>
-
-        <p class="descrizione">
-            <!-- INSERISCI QUI LA DESCRIZIONE DEL MENU BEVANDE -->
-            Le bevande perfette per accompagnare la tua pizza.
-        </p>
-
-        <div class="menu-container">
-
-            <!-- SOSTITUISCI QUESTE CARD CON LE TUE BEVANDE -->
-
-            <div class="card">
-                <h3>[Nome bevanda]</h3>
-                <p>[Formato o descrizione]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome bevanda]</h3>
-                <p>[Formato o descrizione]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <div class="card">
-                <h3>[Nome bevanda]</h3>
-                <p>[Formato o descrizione]</p>
-                <span class="prezzo">€ [Prezzo]</span>
-            </div>
-
-            <!-- AGGIUNGI ALTRE BEVANDE COPIANDO UNA CARD -->
-
-        </div>
-    </section>
-
-    <!-- CONTATTI -->
-    <section id="contatti">
-        <h2>📍 Contattaci</h2>
-
-        <p>
-            <strong>Indirizzo:</strong>
-            [Inserisci l'indirizzo della pizzeria]
-        </p>
-
-        <p>
-            <strong>Telefono:</strong>
-            [Inserisci il numero di telefono]
-        </p>
-
-        <p>
-            <strong>Orari:</strong>
-            [Inserisci gli orari di apertura]
-        </p>
-
-        <p>
-            <strong>Email:</strong>
-            [Inserisci l'indirizzo email]
-        </p>
-    </section>
-
-    <!-- PIEDE DI PAGINA -->
-    <footer>
-        <p>
-            © 2026 ProntoBisseria - Tutti i diritti riservati.
-        </p>
-    </footer>
+    <p>
+        Progetto realizzato da Lorenzo Vitaterna,
+        Emanuele Terella, David Di Trocchio e Mitin Maksim.
+    </p>
+</footer>
 
 </body>
 </html>
