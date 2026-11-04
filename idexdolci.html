@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Dolci - Pizzeria ProntoBisseria</title>
+  <style>
+    :root {
+      --bg: #f8f1e7;
+      --card: #fffaf5;
+      --primary: #8b1e1e;
+      --secondary: #d9a441;
+      --text: #2d2a26;
+      --muted: #6b625f;
+      --shadow: rgba(71, 36, 16, 0.12);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to bottom, #f7efe6, #f2e7d7);
+      color: var(--text);
+    }
+    .menu-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 30px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px var(--shadow);
+    }
+    .menu-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+    .menu-header .tag {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(139, 30, 30, 0.08);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.08);
+    }
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary), #f3d28d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      color: var(--primary);
+    }
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      min-height: 70px;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed rgba(139, 30, 30, 0.2);
+      padding-top: 14px;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .badge {
+      background: #f9ebd5;
+      color: #7d4d10;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <header class="menu-header">
+      <span class="tag">Dolci</span>
+      <h1>Menu Dolci</h1>
+      <p class="subtitle">I nostri dessert fatti per chiudere in dolcezza ogni pizza.</p>
+    </header>
+    <section class="grid">
+      <article class="card">
+        <div class="icon">🍫</div>
+        <h3>Tortino al Cioccolato</h3>
+        <p>Fresco al cuore fondente, servito con crema alla vaniglia e granella di nocciola.</p>
+        <div class="bottom">
+          <span class="price">€ 7,50</span>
+          <span class="badge">Top Seller</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="icon">🍨</div>
+        <h3>Panna Cotta</h3>
+        <p>Crema morbida al latte, decorata con salsa ai frutti di bosco e scaglie di cioccolato.</p>
+        <div class="bottom">
+          <span class="price">€ 6,00</span>
+          <span class="badge">Leggera</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="icon">🍰</div>
+        <h3>Tiramisu Classico</h3>
+        <p>Strati di savoiardi, mascarpone, caffè e cacao, perfetto per gli amanti del dolce intenso.</p>
+        <div class="bottom">
+          <span class="price">€ 8,00</span>
+          <span class="badge">Classico</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="icon">🥐</div>
+        <h3>Zeppola alla Nutella</h3>
+        <p>Dolce soffice e goloso, farcita con crema Nutella e guarnita con zucchero a velo.</p>
+        <div class="bottom">
+          <span class="price">€ 6,50</span>
+          <span class="badge">Gourmet</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="icon">🍓</div>
+        <h3>Cheesecake ai Frutti Rossi</h3>
+        <p>Base croccante, crema morbida e topping ai frutti rossi freschi, irresistibile e rinfrescante.</p>
+        <div class="bottom">
+          <span class="price">€ 7,00</span>
+          <span class="badge">Fresco</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="icon">🍪</div>
+        <h3>Affogato al Caffè</h3>
+        <p>Gelato alla vaniglia con espresso caldo e una spolverata di cacao amaro.</p>
+        <div class="bottom">
+          <span class="price">€ 5,50</span>
+          <span class="badge">Doppio</span>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
