@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronto Bisseria - Fondi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #C82333;
+            --primary-dark: #A71D2A;
+            --accent: #E6A15C;
+            --dark-wood: #1F1714;
+            --cream: #FAF6EE;
+            --text-dark: #2B2B2B;
+            --text-muted: #6C757D;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        
+        header {
+            background: linear-gradient(rgba(31, 23, 20, 0.75), rgba(31, 23, 20, 0.85)), 
+                        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 60px 20px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #FFF;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header-content h1 span {
+            color: var(--accent);
+        }
+
+        .location-tag {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: #E0E0E0;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            font-style: italic;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            background: white;
+            border: 2px solid #EAEAEA;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(200, 35, 51, 0.3);
+        }
+
+       
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        
+        .pizza-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pizza-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .pizza-img-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .pizza-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .pizza-card:hover .pizza-img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(31, 23, 20, 0.85);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pizza-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .pizza-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .pizza-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-wood);
+        }
+
+        .pizza-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(200, 35, 51, 0.08);
+            padding: 4px 12px;
+            border-radius: 8px;
+        }
+
+        .pizza-ingredients {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        
+        footer {
+            background-color: var(--dark-wood);
+            color: #AAA;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer h3 {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+        }
+
+        .footer-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+       
+        @media (max-width: 600px) {
+            .header-content h1 { font-size: 2.2rem; }
+            .menu-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+        <div class="header-content">
+            <div class="location-tag"><i class="fa-solid fa-location-dot"></i> Fondi (LT)</div>
+            <h1>Pronto <span>Pizzeria</span></h1>
+            <p class="subtitle">La vera tradizione della pizza artigianale, preparata con ingredienti di prima scelta.</p>
+            <a href="tel:+390771123456" class="phone-btn"><i class="fa-solid fa-phone"></i> Chiama e Ordina</a>
+        </div>
+    </header>
+
+  
+    <main class="container">
+
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterMenu('all')">Tutte</button>
+            <button class="cat-btn" onclick="filterMenu('classiche')">Classiche</button>
+            <button class="cat-btn" onclick="filterMenu('speciali')">Speciali</button>
+            <button class="cat-btn" onclick="filterMenu('vegetariane')">Vegetariane</button>
+        </div>
+
+       
+        <div class="menu-grid">
+
+            
+            <div class="pizza-card" data-category="classiche vegetariane">
+                <div class="pizza-img-wrapper">
+                    <span class="badge">Classica</span>
+                    <img src="https://cookingitalians.com/wp-content/uploads/2024/11/Margherita-Pizza.jpg" alt="Margherita" class="pizza-img">
+                </div>
+                <div class="pizza-info">
+                    <div class="pizza-header">
+                        <h2 class="pizza-title">Margherita</h2>
+                        <span class="pizza-price">€ 6,00</span>
+                    </div>
+                    <p class="pizza-ingredients">Pomodoro San Marzano DOP, Mozzarella di Bufala Campana, Basilico fresco, Olio EVO.</p>
+                </div>
+            </div>
+
+            <!-- Pizza 2 -->
+            <div class="pizza-card" data-category="classiche vegetariane">
+                <div class="pizza-img-wrapper">
+                    <span class="badge">Vegana</span>
+                    <img src="http://www.tefal.com.au/cdn/shop/articles/Marinara_pizza_a99b650b-8765-4df1-bc0a-e018ac3b14a5.png?v=1748829917&width=2048" alt="Marinara" class="pizza-img">
+                </div>
+                <div class="pizza-info">
+                    <div class="pizza-header">
+                        <h2 class="pizza-title">Marinara</h2>
+                        <span class="pizza-price">€ 5,00</span>
+                    </div>
+                    <p class="pizza-ingredients">Pomodoro San Marzano DOP, Aglio dell'Ufita, Origano selvatico, Olio EVO.</p>
+                </div>
+            </div>
+
+            <!-- Pizza 3 -->
+            <div class="pizza-card" data-category="classiche">
+                <div class="pizza-img-wrapper">
+                    <span class="badge">Piccante</span>
+                    <img src="http://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2014/08/1810.jpg" alt="Diavola" class="pizza-img">
+                </div>
+                <div class="pizza-info">
+                    <div class="pizza-header">
+                        <h2 class="pizza-title">Diavola</h2>
+                        <span class="pizza-price">€ 7,50</span>
+                    </div>
+                    <p class="pizza-ingredients">Pomodoro, Mozzarella fior di latte, Salame piccante, Peperoncino fresco, Olio piccante.</p>
+                </div>
+            </div>
+
+            <!-- Pizza 4 -->
+            <div class="pizza-card" data-category="speciali vegetariane">
+                <div class="pizza-img-wrapper">
+                    <span class="badge">Richiesta</span>
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%D0%98%D1%82%D0%B0%D0%BB%D0%B8%D1%8F_4_%D1%81%D1%8B%D1%80_%D0%BF%D0%B8%D1%86%D1%86%D0%B0%D1%81%D1%8B.jpg/1280px-%D0%98%D1%82%D0%B0%D0%BB%D0%B8%D1%8F_4_%D1%81%D1%8B%D1%80_%D0%BF%D0%B8%D1%86%D1%86%D0%B0%D1%81%D1%8B.jpg" alt="4 Formaggi" class="pizza-img">
+                </div>
+                <div class="pizza-info">
+                    <div class="pizza-header">
+                        <h2 class="pizza-title">Quattro Formaggi</h2>
+                        <span class="pizza-price">€ 8,50</span>
+                    </div>
+                    <p class="pizza-ingredients">Mozzarella fior di latte, Gorgonzola DOP, Fontina d'Aosta, Parmigiano Reggiano 24 mesi.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Pronto Pizzeria</h3>
+        <div class="footer-info">
+            <p><i class="fa-solid fa-map-pin"></i> Via Appia 150 - Fondi (LT)</p>
+            <p><i class="fa-solid fa-clock"></i> Aperto tutti i giorni dalle 18:30 alle 23:30</p>
+            <p><i class="fa-solid fa-phone"></i> Never Gonna Give You Up , Never Gonna Let You Down </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PER FILTRAGGIO CATEGORIE -->
+    <script>
+        function filterMenu(category) {
+            // Aggiorna classe attiva sui bottoni
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filtra le card
+            const cards = document.querySelectorAll('.pizza-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
